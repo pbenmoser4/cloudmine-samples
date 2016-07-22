@@ -149,7 +149,7 @@ function createObjectFromJsonStructure(structure){
 
 		} else if (vals instanceof Object){
 			// recursive case
-			for (var i = 0; i < genPopCount(count, Object.keys(vals).length); i++){
+			for (var i = 0; i < genPopCount(count, -1); i++){
 				dat.push(createObjectFromJsonStructure(vals));
 			}
 
@@ -174,14 +174,17 @@ function createObjectFromJsonStructure(structure){
 */
 function genPopCount(countType, length) {
 
-	var popCount = 1
+	var popCount = 0;
 
 	if (countType == COUNT_SINGLE){
-		return popCount;
+		popCount = 1
 	} else if (countType == COUNT_MULTI){
 		popCount = Math.floor((Math.random() * length));
-		return popCount;
+	} else if(typeof countType == "number"){
+		popCount = countType;
 	}
+
+	return popCount;
 }
 
 /**
@@ -229,6 +232,6 @@ function shuffle(array) {
 	return copy;
 }
 
-// run(1, structure);
+run(100, structure);
 
-clearData();
+// clearData();
