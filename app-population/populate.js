@@ -3,23 +3,30 @@ var _ = require('underscore');
 
 ////////////////// Settings //////////////////
 
+// ------- DO NOT ALTER -------
 var COUNT_SINGLE = "single";
 var COUNT_MULTI = "multi";
 
-// Alter how logs are desplayed:
 var LOGS_OFF = 0;
 var LOGS_ESSENTIAL_ONLY = 1;
 var LOGS_ALL = 2;
+// ----------------------------
+
 // Change this to alter what you see in the output
 var LOGS_SETTING = LOGS_ESSENTIAL_ONLY;
 
 //////////////////////////////////////////////
+
+
+////////////////// CloudMine Credentials //////////////////
 
 var ws = new cloudmine.WebService({
 	apiroot: 'https://api.cloudmine.me',
 	appid: '61aea9c410c3214d47087b858b409c77',
 	apikey: '8FCBEFE8284E44BFA79034EC8D148120',
 });
+
+//////////////////////////////////////////////////////////
 
 // The structure of the sample objects that you want to create
 var structure = {
