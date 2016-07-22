@@ -1,3 +1,13 @@
+/**
+* Population script for generating random application data. By defualt, this
+* script will create generic clinical trial data.
+*
+* For information on use and how to alter the type of objects created, see the
+* README on github (https://github.com/pbenmoser4/cloudmine-samples/tree/master/app-population)
+*
+* Created by Ben Moser, July 2016
+*/
+
 var cloudmine = require('cloudmine');
 var _ = require('underscore');
 
@@ -22,8 +32,8 @@ var LOGS_SETTING = LOGS_ESSENTIAL_ONLY;
 
 var ws = new cloudmine.WebService({
 	apiroot: 'https://api.cloudmine.me',
-	appid: '61aea9c410c3214d47087b858b409c77',
-	apikey: '8FCBEFE8284E44BFA79034EC8D148120',
+	appid: 'YOUR_APPLICATION_ID',
+	apikey: 'YOUR_API_KEY',
 });
 
 //////////////////////////////////////////////////////////
@@ -36,10 +46,6 @@ var structure = {
 	},
 	"sex" : {
 		"values": ["m","f"],
-		"count": COUNT_SINGLE
-	},
-	"dosage": {
-		"values": [0.0,0.5,1.0,1.5,2.0,2.5],
 		"count": COUNT_SINGLE
 	},
 	"cured": {
@@ -66,23 +72,14 @@ var structure = {
 		"values": [1,2,3,4,5,6,7,8,9,10,11,12],
 		"count": COUNT_SINGLE
 	},
-	"sub": {
+	"drug_info": {
 		"values": {
-			"field1": {
-				"values": [0,1,2],
+			"placebo": {
+				"values": [0,1],
 				"count": COUNT_SINGLE
 			},
-			"field2": {
-				values: ["something","something else"],
-				"count": COUNT_SINGLE
-			},
-			"subsub": {
-				"values": {
-					"subfield1": {
-						"values": [0,1,2,3,4,5,6],
-						"count": COUNT_MULTI
-					}
-				},
+			"dosage": {
+				"values": [0.0,0.5,1.0,1.5,2.0,2.5],
 				"count": COUNT_SINGLE
 			}
 		},
