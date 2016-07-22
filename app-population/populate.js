@@ -73,16 +73,18 @@ var structure = {
 		"count": COUNT_SINGLE
 	},
 	"drug_info": {
-		"values": {
-			"placebo": {
-				"values": [0,1],
-				"count": COUNT_SINGLE
-			},
-			"dosage": {
-				"values": [0.0,0.5,1.0,1.5,2.0,2.5],
-				"count": COUNT_SINGLE
-			}
-		},
+		"values": drug_info_subfields,
+		"count": COUNT_SINGLE
+	}
+}
+
+var drug_info_subfields = {
+	"placebo": {
+		"values": [0,1],
+		"count": COUNT_SINGLE
+	},
+	"dosage": {
+		"values": [0.0,0.5,1.0,1.5,2.0,2.5],
 		"count": COUNT_SINGLE
 	}
 }
