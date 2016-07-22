@@ -41,7 +41,9 @@ The `structure` variable is used as the foundation of the objects being created 
 }
 ```
 
-Where each of the `field_name`s above correspond to the name of an object field in the created object, the `values` of each `field_name` correspond to the possible values of that field, and the `count` refers to whether a single value or an array of values should be generated. 
+Where each of the `field_name`s above correspond to the name of an object field in the created object, the `values` of each `field_name` correspond to the possible values of that field, and the `count` refers to whether a single value or an array of values should be generated.
+
+Notice that, when sub-fielding, creating one structure for the subfield is enough. Specifying `COUNT_MULTI` on a subfield will generate an array of subfields based on the seed structure of that subfield. 
 
 ---------
 
