@@ -32,8 +32,8 @@ var LOGS_SETTING = LOGS_ESSENTIAL_ONLY;
 
 var ws = new cloudmine.WebService({
 	apiroot: 'https://api.cloudmine.me',
-	appid: 'YOUR_APPLICATION_ID',
-	apikey: 'YOUR_API_KEY',
+	appid: '61aea9c410c3214d47087b858b409c77',
+	apikey: '8FCBEFE8284E44BFA79034EC8D148120',
 });
 
 //////////////////////////////////////////////////////////
@@ -229,6 +229,6 @@ function shuffle(array) {
 	return copy;
 }
 
-run(1, structure);
+// run(1, structure);
 
-// clearData();
+clearData();

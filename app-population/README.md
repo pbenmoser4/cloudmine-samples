@@ -2,9 +2,19 @@
 
 This is a script written in [node.js]('https://nodejs.org/en/') intended to help new users populate an application with dummy data for testing purposes.
 
+## Getting Started
+
+Before using this script, download `node.js` from the link above, if you don't already have it installed. The download will include the `npm` package manager for node, which will be used below.
+
 ## Use
 
 To use this script, clone or download the [`cloudmine-samples`]('https://github.com/pbenmoser4/cloudmine-samples') repo and navigate to the `app-population` directory in your terminal.
+
+Before use, be sure that you have the `underscore` npm module installed:
+
+```
+sudo npm install underscore
+```
 
 ### CloudMine credentials
 
@@ -14,7 +24,13 @@ Before taking any actions, you will need to enter in the appropriate credentials
 
 Within the `populate.js` script, there are two options: `run()` and `clearData()`. To clear all application level objects (delete all), go to the bottom of the script and uncomment the line calling `clearData()`, and comment out the `run()` line above it. To create new objects within an application, uncomment the `run()` line, and comment out the `clearData()` line. The `run()` function takes two arguments: `count` and `structure`. Enter in the number of objects you would like to create as the `count` argument (first argument), and designate the structure of the objects you would like to create as the `structure` argument (second argument).
 
-Once you have made these changes, run `node populate.js` from within the `app-population` directory in your terminal to carry out the deletion or creation process.
+Once you have made these changes, run
+
+```
+node populate.js
+```
+
+from within the `app-population` directory in your terminal to carry out the deletion or creation process.
 
 ## A Note on `structure`
 
@@ -43,7 +59,7 @@ The `structure` variable is used as the foundation of the objects being created 
 
 Where each of the `field_name`s above correspond to the name of an object field in the created object, the `values` of each `field_name` correspond to the possible values of that field, and the `count` refers to whether a single value or an array of values should be generated.
 
-Notice that, when sub-fielding, creating one structure for the subfield is enough. Specifying `COUNT_MULTI` on a subfield will generate an array of subfields based on the seed structure of that subfield. 
+Notice that, when sub-fielding, creating one structure for the subfield is enough. Specifying `COUNT_MULTI` on a subfield will generate an array of subfields based on the seed structure of that subfield.
 
 ---------
 
